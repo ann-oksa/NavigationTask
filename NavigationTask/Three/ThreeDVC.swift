@@ -1,13 +1,13 @@
 //
-//  ThreeAViewController.swift
+//  ThreeDVC.swift
 //  NavigationTask
 //
-//  Created by Anna Oksanichenko on 21.05.2021.
+//  Created by Anna Oksanichenko on 31.05.2021.
 //
 
 import UIKit
 
-class ThreeAViewController: UIViewController {
+class ThreeDVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

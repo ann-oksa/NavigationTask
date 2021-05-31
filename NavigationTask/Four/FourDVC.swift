@@ -1,13 +1,13 @@
 //
-//  TwoAViewController.swift
+//  FourDVC.swift
 //  NavigationTask
 //
-//  Created by Anna Oksanichenko on 21.05.2021.
+//  Created by Anna Oksanichenko on 31.05.2021.
 //
 
 import UIKit
 
-class TwoAViewController: UIViewController {
+class FourDVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,10 +15,7 @@ class TwoAViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func toThreeA(_ sender: UIButton) {
-        performSegue(withIdentifier: "toThreeA", sender: nil)
-    }
-    
+
     /*
     // MARK: - Navigation
 

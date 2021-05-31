@@ -13,10 +13,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        if window != nil {
+            
+            let oneAViewController = storyboard.instantiateViewController(withIdentifier: "OneAVC")
+          //  let oneBViewController = storyboard.instantiateViewController(withIdentifier: "OneBVC")
+          //  let oneCViewController = storyboard.instantiateViewController(withIdentifier: "OneCVC")
+            let oneDViewController = storyboard.instantiateViewController(withIdentifier: "OneDVC")
+            let twoAViewController = storyboard.instantiateViewController(withIdentifier: "TwoAVC")
+          //  let twoBViewController = storyboard.instantiateViewController(withIdentifier: "TwoBVC")
+          //  let twoCViewController = storyboard.instantiateViewController(withIdentifier: "TwoCVC")
+            let twoDViewController = storyboard.instantiateViewController(withIdentifier: "TwoDVC")
+            let threeAViewController = storyboard.instantiateViewController(withIdentifier: "ThreeAVC")
+           // let threeBViewController = storyboard.instantiateViewController(withIdentifier: "ThreeBVC")
+            //let threeCViewController = storyboard.instantiateViewController(withIdentifier: "ThreeCVC")
+            let threeDViewController = storyboard.instantiateViewController(withIdentifier: "ThreeDVC")
+            let fourAViewController = storyboard.instantiateViewController(withIdentifier: "FourAVC")
+            //let fourBViewController = storyboard.instantiateViewController(withIdentifier: "FourBVC")
+            //let fourCViewController = storyboard.instantiateViewController(withIdentifier: "FourCVC")
+            let fourDViewController = storyboard.instantiateViewController(withIdentifier: "FourDVC")
+
+
+            
+            let tabBarController = UITabBarController.init(nibName: nil, bundle: nil)
+            let navigationController = UINavigationController.init(rootViewController: fourDViewController)
+            tabBarController.viewControllers = [oneAViewController, twoAViewController, threeAViewController, fourAViewController]
+            navigationController.viewControllers = [oneDViewController, twoDViewController, threeDViewController, fourDViewController]
+                self.window?.rootViewController = navigationController
+                self.window?.makeKeyAndVisible()
+            
+            //  navigationController.viewControllers = [oneAViewController, oneBViewController, oneCViewController, oneDViewController, twoAViewController, twoBViewController, twoCViewController, twoDViewController, threeAViewController, threeBViewController, threeCViewController, threeDViewController, fourAViewController, fourBViewController, fourCViewController, fourDViewController]
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
