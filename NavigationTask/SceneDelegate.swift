@@ -39,11 +39,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let fourDViewController = storyboard.instantiateViewController(withIdentifier: "FourDVC")
 
 
-            
+           
             let tabBarController = UITabBarController.init(nibName: nil, bundle: nil)
             let navigationController = UINavigationController.init(rootViewController: fourDViewController)
             tabBarController.viewControllers = [oneAViewController, twoAViewController, threeAViewController, fourAViewController]
             navigationController.viewControllers = [oneDViewController, twoDViewController, threeDViewController, fourDViewController]
+
                 self.window?.rootViewController = navigationController
                 self.window?.makeKeyAndVisible()
             
